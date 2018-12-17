@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出版社列表</title>
+    <link rel="stylesheet" href="/statics/bootstrap-3.3.7/css/bootstrap.css">
+    <script src="/statics/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+    <table class="table table-hover">
+        <tr>
+            <th>id</th>
+            <th>出版社</th>
+        </tr>
+        {% for publisher in publishers %}
+            <tr>
+                <td>{{ publisher.id }}</td>
+                <td>{{ publisher.name }}</td>
+                <td><a href="/del_publisher?del_id={{ publisher.id }}" class="btn btn-danger">删除</a></td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+        <a href="/add_publisher" class="btn btn-success">添加出版社</a>
+</div>
+</body>
+</html>
